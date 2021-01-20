@@ -1,0 +1,5 @@
+# Rewrite everything except 'serve.php' to serve.php
+RewriteCond %{REQUEST_URI} !^/jamigo/serve\.php [NC]
+#                            ^^^^^^^^ Your context path here.
+
+RewriteRule ^(.*)$ serve.php?filename=$1
